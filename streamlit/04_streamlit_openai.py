@@ -12,16 +12,6 @@ rick_html='''<iframe src="https://coupa.ng/cfCxDh" width="120" height="240" fram
 
 
 with st.sidebar:
-    st.link_button("""고마..고마 한푼만 주이소..\n한푼만 주시믄 우리 아들 경식이가\n오늘 한끼를 먹을 수 있십니도...\n
-                   (이곳을 클릭해 경식이 한끼 먹이기.)""","https://toss.me/profmin")
-    
-    st.markdown(iframe_html, unsafe_allow_html=True)
-    col1, col2 = st.columns(2)
-    with col1:
-        st.markdown(bed_html, unsafe_allow_html=True)
-    with col2:
-        st.markdown(rick_html, unsafe_allow_html=True)
-    st.info("이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.")
 
     openai_api_key = st.text_input("OpenAi API KEY", type="password")
     client = OpenAI(api_key=openai_api_key)
@@ -35,6 +25,19 @@ with st.sidebar:
         thread_id = thread.id
         st.subheader(f"{thread_id}", divider ="rainbow")
         st.info("새로운 쓰레드가 생성되었습니다.")
+
+    
+    
+    st.link_button("""고마..고마 한푼만 주이소..\n한푼만 주시믄 우리 아들 경식이가\n오늘 한끼를 먹을 수 있십니도...\n
+                   (이곳을 클릭해 경식이 한끼 먹이기.)""","https://toss.me/profmin")
+    
+    st.markdown(iframe_html, unsafe_allow_html=True)
+    col1, col2 = st.columns(2)
+    with col1:
+        st.markdown(bed_html, unsafe_allow_html=True)
+    with col2:
+        st.markdown(rick_html, unsafe_allow_html=True)
+    st.info("이 포스팅은 쿠팡 파트너스 활동의 일환으로, 이에 따른 일정액의 수수료를 제공받습니다.")
 
 st.title("My ChatBot")
 
