@@ -26,7 +26,7 @@ with st.sidebar:
         st.subheader(f"{thread_id}", divider ="rainbow")
         st.info("새로운 쓰레드가 생성되었습니다.")
 
-    
+    st.markdown(" ") 
     
     st.link_button("""고마..고마 한푼만 주이소..\n한푼만 주시믄 우리 아들 경식이가\n오늘 한끼를 먹을 수 있십니도...\n
                    (이곳을 클릭해 경식이 한끼 먹이기.)""","https://toss.me/profmin")
