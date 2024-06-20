@@ -2,8 +2,8 @@ from openai import OpenAI
 import streamlit as st 
 import time
 
-assistant_id = 'asst_zF1MbuL8D9S5zjhQyowTawSa'
-#thread_id = 'thread_GrTeIDLF9ihYQoCRxgVucrKK'
+assistant_id = st.secrets["assistant_id"]
+thread_id = st.secrets["thread_id"]
 
 iframe_html = '''<iframe src="https://ads-partners.coupang.com/widgets.html?id=786033&template=banner&trackingCode=AF5361443&subId=&width=300&height=250" width="300" height="250" frameborder="0" scrolling="no" referrerpolicy="unsafe-url" browsingtopics></iframe>'''
 bed_html = '''<a href="https://link.coupang.com/a/bGo0X5" target="_blank" referrerpolicy="unsafe-url"><img src="https://img5a.coupangcdn.com/image/affiliate/banner/7abc281112688ec0252dd6c8e9ab0828@2x.jpg" alt="무설치 낮잠 접이식침대 6단계 조정 대형 휴대용 야전침대 소음 없고 접이식 싱글침대" width="120" height="240"></a>'''
@@ -26,7 +26,7 @@ with st.sidebar:
     openai_api_key = st.text_input("OpenAi API KEY", type="password")
     client = OpenAI(api_key=openai_api_key)
 
-    thread_id = st.text_input("Thread ID", value="thread_GrTeIDLF9ihYQoCRxgVucrKK" )
+    thread_id = st.text_input("Thread ID", value=thread_id )
 
     thread_make_btn = st.button("Create a new thread")
     if thread_make_btn:
